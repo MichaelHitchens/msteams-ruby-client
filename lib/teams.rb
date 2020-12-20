@@ -11,7 +11,8 @@ class Teams
     request.body = {
       title: options[:title],
       text: options[:text2html] ? text2html(text) : text,
-      summary: options[:summary] || text
+      summary: options[:summary] || text,
+      themeColor: options[:color] || text
     }.to_json
 
     http = Net::HTTP.new(uri.host, uri.port)
